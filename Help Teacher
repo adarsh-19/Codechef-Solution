@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+#define FAST ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define ll long long int
+#define pb push_back
+#define pob pop_back
+#define ub upper_bound
+#define lb lower_bound
+#define mp make_pair
+using namespace std;
+bool comp(pair<ll,ll>&a,pair<ll,ll>&b)
+{
+    return (a.second<b.second);
+}
+  int main()
+ {
+  	FAST;
+  	  ll i,t,n,x,y,sum,k;
+  	  string str;
+  	  cin>>t;
+  	  while(t-->0)
+  	  {  sum=0;
+  	  	  vector < pair < ll,pair <ll,pair <ll,string > > > > s;
+  	    	cin>>n;
+  	  	  for(i=0;i<n;i++)
+  	  	  { cin>>str>>y>>x;
+  	  	     sum+=x;
+  	  	      s.pb({x,{i,{y,str}}});
+  	  	  }
+  	  	  if(sum%n==0)
+  	  	   k=sum/n;
+  	  	   else
+  	  	   k=1+(ll)(sum/n);
+  	  	  sort(s.begin(),s.end());
+  	  	  
+  	  	  for(auto it:s)
+  	  	  {  
+  	  	  	  if(it.first<k)
+  	  	  	  {
+  	  	  	  	cout<<it.second.second.second<<" "<<it.second.second.first<<" "<<it.first<<endl;
+  	  	  	  }
+  	  	  }
+  	  
+  	  }
+   	return 0;
+  }                     
+  
